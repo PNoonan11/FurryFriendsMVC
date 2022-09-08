@@ -1,0 +1,58 @@
+@model IEnumerable<FurryFriendsMVC.Models.Reply.ReplyListItem>
+   
+@{
+    ViewData["Title"] = "Reply Index";
+}
+<h1>Reply Stuff?</h1>
+<p>
+    <a asp-action="Create">Create Reply</a>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTimeCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTimeUpdated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+    <tr>
+        <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+                        @Html.DisplayFor(modelItem => item.DateTimeCreated)
+        </td>
+        <td>
+                        @Html.DisplayFor(modelItem => item.DateTimeUpdated)
+        </td>
+        <td>
+                        @Html.ActionLink("Edit", "Edit", "Reply", new { id = item.Id }) |
+                        @Html.ActionLink("Detail", "Detail", "Reply", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", "Reply", new { id = item.Id })
+        </td>
+    </tr>
+            }
+    </tbody>
+</table>
+</p>

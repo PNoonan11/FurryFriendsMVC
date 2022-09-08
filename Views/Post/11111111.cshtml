@@ -1,0 +1,30 @@
+@model PostViewModel
+
+@{
+    ViewData["Title"] = Model.Id;
+}
+
+<div class="d-flex flex-row justify-content-between align-items-end">
+    <h1 class="m-0">@Model.Id</h1>
+    <a asp-action="Index">Back to Index</a>
+</div>
+<hr />
+<section class="item p-4 text-center">
+    <h3>Post Details</h3>
+    <hr />
+    <div class="row m-0 pt-3 justify-content-between">
+        <div class="col-3">
+            <h5>Post:</h5>
+            <p>@Model.Text</p>
+        </div>
+        <div class="col-3">
+            <h5>UserName:</h5>
+            <p>@Model.UserName</p>
+        </div>
+        <div class="col-3">
+            <h5>Posted:</h5>
+            <p>@Model.DateTimeCreated</p>
+        </div>
+
+    </div>
+</section>
